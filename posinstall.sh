@@ -1,4 +1,24 @@
 #!/bin/bash
+sudo echo
+# Atualizando firmwares
+git clone https://aur.archlinux.org/aic94xx-firmware.git 
+clear
+cd aic94xx-firmware/
+makepkg -sri
+rm -rf aic94xx-firmware/
+clear
+git clone https://aur.archlinux.org/wd719x-firmware.git 
+cd wd719x-firmware/
+makepkg -sri
+rm -rf wd719x-firmware/
+git clone https://aur.archlinux.org/upd72020x-fw.git
+cd upd72020x-fw/
+makepkg -sri
+rm -rf upd72020x-fw
+clear
+sudo mkinitcpio -P
+clear
+
 echo -e "\033[01;57mUm minuto, estamos configurando..."
 # Configurations loading...
 sudo systemctl enable paccache.timer
