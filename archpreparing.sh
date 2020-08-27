@@ -1,3 +1,4 @@
+#!/bin/bash
 # particionar e formatar as partições
 # montar o ponto do sistema em /mnt
 # timedatectl set-ntp true
@@ -25,7 +26,7 @@ gpasswd -a $Usuario storage
 gpasswd -a $Usuario scanner8
 gpasswd -a $Usuario power
 mkinitcpio -P
-pacman -Syyu reflector bash-completion networkmanager network-manager-applet dhcpcd pacman-contrib pkgfile wireless_tools wpa_supplicant mesa dialog
+pacman -Syyu reflector bash-completion networkmanager network-manager-applet dhcpcd pacman-contrib pkgfile wireless_tools wpa_supplicant mesa dialog sudo
 echo "$Usuario ALL=(ALL) ALL" >> /etc/sudoers
 pacman -S grub os-prober
 read -p "Digite a unidade: " Unidade;
