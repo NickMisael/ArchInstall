@@ -48,4 +48,9 @@ clear
 
 # Finalizando as configuraoes e reiniciando
 systemctl enable lxdm
+clear
+
+echo -e "\033[1;34mTerminamos a instalacao completa :D!!"
+echo -e "\033[1;5;36mSeja Muito Bem-Vindo ao Universo ArchLinux"
+sleep 10
 reboot
