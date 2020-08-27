@@ -24,8 +24,8 @@ echo -e "\033[01;31mInstalando Drivers..."
 sudo pacman -S pulseaudio-alsa pavucontrol alsa-firmware alsa-utils a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb alsa alsa-lib alsa-tools alsa-plugins pulseaudio vlc xf86-video-fbdev xf86-video-vesa x86-input-synaptics cups gtk3-print-backends system-config-printer
 clear
 lspci | grep -e VGA -e 3D
-echo -e " N -> NVIDIA\nA -> AMDGPU\nI -> INTEL\nV -> VIRTUALBOX\n"
-read -p "Digite sua placa de video: " $PlacaVideo;
+echo -e " N -> NVIDIA\nA -> AMDGPU/ATI\nI -> INTEL\nV -> VIRTUALBOX\n"
+read -p "Selecione sua placa de video: " $PlacaVideo;
 if [ "$PlacaVideo"=="N" ]; then
   sudo pacman -S xf86-video-nouveau nvidia nvidia-utils;
 elif [ "$PlacaVideo"=="A" ]; then
@@ -36,11 +36,12 @@ elif [ "$PlacaVideo"=="I" ]; then
 elif [ "$PlacaVideo"=="V" ]; then
     sudo pacman -S xf86-video-fbdev virtualbox-guest-utils virtualbox-guest-modules-arch;
 fi
+clear
 
 # Install System tools && ambiente LXDE
 sudo pacman -S openvpn gedit firefox xorg xorg-utils gparted openssh lxde  xorg-xinit terminator unrar p7zip lxde
+clear
 
-echo -e
 #Install tools
 sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor steghide metasploit hydra aircrack-ng john nikto nipper netcat inurlbr etherape chromensics arpon
 clear
