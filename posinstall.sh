@@ -63,7 +63,7 @@ sudo pacman -S openvpn gedit firefox xorg xorg-utils gparted openssh lxde  xorg-
 clear
 
 #Install tools
-sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor steghide metasploit hydra aircrack-ng john nikto nipper netcat inurlbr etherape chromensics arpon
+sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor steghide metasploit hydra aircrack-ng john nikto nipper netcat theharvester inurlbr etherape chromensics arpon netmap netdiscover dnsenum dnsmap whois
 clear
 
 # Finalizando as configuraoes e reiniciando
