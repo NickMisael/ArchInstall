@@ -5,15 +5,18 @@ git clone https://aur.archlinux.org/aic94xx-firmware.git
 clear
 cd aic94xx-firmware/
 makepkg -sri
+cd ..
 rm -rf aic94xx-firmware/
 clear
 git clone https://aur.archlinux.org/wd719x-firmware.git 
 cd wd719x-firmware/
 makepkg -sri
+cd ..
 rm -rf wd719x-firmware/
 git clone https://aur.archlinux.org/upd72020x-fw.git
 cd upd72020x-fw/
 makepkg -sri
+cd ..
 rm -rf upd72020x-fw
 clear
 sudo mkinitcpio -P
