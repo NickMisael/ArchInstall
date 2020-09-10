@@ -27,7 +27,7 @@ gpasswd -a $Usuario storage
 gpasswd -a $Usuario scanner8
 gpasswd -a $Usuario power
 clear
-pacman -Syyu reflector bash-completion networkmanager network-manager-applet dhcpcd pacman-contrib pkgfile wireless_tools wpa_supplicant mesa dialog sudo net-tools dnsutils
+pacman -Syyu reflector bash-completion networkmanager network-manager-applet dhcpcd pacman-contrib pkgfile wireless_tools wpa_supplicant mesa dialog sudo net-tools dnsutils --noconfirm
 clear
 echo "$Usuario ALL=(ALL) ALL" >> /etc/sudoers
 pacman -S grub os-prober
