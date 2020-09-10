@@ -21,11 +21,13 @@ useradd -m $Usuario
 passwd $Usuario
 gpasswd -a $Usuario sys
 gpasswd -a $Usuario lp
+gpasswd -a $Usuario log
+gpasswd -a $Usuario lock
 gpasswd -a $Usuario network
 gpasswd -a $Usuario video
 gpasswd -a $Usuario optical
 gpasswd -a $Usuario storage
-gpasswd -a $Usuario scanner8
+gpasswd -a $Usuario scanner
 gpasswd -a $Usuario power
 clear
 pacman -Syyu reflector bash-completion networkmanager network-manager-applet dhcpcd pacman-contrib pkgfile wireless_tools wpa_supplicant mesa dialog sudo net-tools dnsutils --noconfirm
