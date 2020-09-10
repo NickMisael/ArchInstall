@@ -18,6 +18,7 @@ echo -e "\033[01;37;40mDigite a senha do root:"
 passwd
 read -p "Digite o nome do usuário: " Usuario;
 useradd -m $Usuario
+passwd $Usuario
 gpasswd -a $Usuario sys
 gpasswd -a $Usuario lp
 gpasswd -a $Usuario network
