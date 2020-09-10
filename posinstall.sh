@@ -41,25 +41,25 @@ clear
 
 # Install Basic Drivers
 echo -e "\033[01;31mInstalando Drivers..."
-sudo pacman -S pulseaudio-alsa pavucontrol alsa-firmware alsa-utils a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb alsa alsa-lib alsa-tools alsa-plugins pulseaudio vlc xf86-video-fbdev xf86-video-vesa x86-input-synaptics cups gtk3-print-backends system-config-printer
+sudo pacman -S pulseaudio-alsa pavucontrol alsa-firmware alsa-utils a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb alsa alsa-lib alsa-tools alsa-plugins pulseaudio vlc xf86-video-fbdev xf86-video-vesa x86-input-synaptics cups gtk3-print-backends system-config-printer --noconfirm
 clear
 lspci | grep -e VGA -e 3D
 echo -e " N -> NVIDIA\nA -> AMDGPU/ATI\nI -> INTEL\nV -> VIRTUALBOX\n"
 read -p "Selecione sua placa de video: " $PlacaVideo;
 if [ "$PlacaVideo"=="N" ]; then
-  sudo pacman -S xf86-video-nouveau nvidia nvidia-utils;
+  sudo pacman -S xf86-video-nouveau nvidia nvidia-utils --noconfirm;
 elif [ "$PlacaVideo"=="A" ]; then
-    sudo pacman -S xf86-video-amdgpu;
-    sudo pacman -S xf86-video-ati;
+    sudo pacman -S xf86-video-amdgpu --noconfirm;
+    sudo pacman -S xf86-video-ati --noconfirm;
 elif [ "$PlacaVideo"=="I" ]; then
-    sudo pacman -S xf86-video-intel;
+    sudo pacman -S xf86-video-intel --noconfirm;
 elif [ "$PlacaVideo"=="V" ]; then
-    sudo pacman -S xf86-video-fbdev virtualbox-guest-utils virtualbox-guest-modules-arch;
+    sudo pacman -S xf86-video-fbdev virtualbox-guest-utils virtualbox-guest-modules-arch --noconfirm;
 fi
 clear
 
 # Install System tools && ambiente LXDE
-sudo pacman -S openvpn gedit firefox xorg xorg-utils gparted openssh lxde  xorg-xinit terminator unrar p7zip lxde
+sudo pacman -S openvpn gedit firefox xorg xorg-utils gparted openssh xorg-xinit terminator unrar p7zip --noconfirm
 clear
 
 #Install tools
@@ -67,7 +67,7 @@ sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor steghide metasploi
 clear
 
 # Finalizando as configuraoes e reiniciando
-systemctl enable lxdm
+# systemctl enable lxdm
 clear
 
 echo -e "\033[1;34mTerminamos a instalacao completa :D!!"
