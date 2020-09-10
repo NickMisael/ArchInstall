@@ -36,7 +36,7 @@ clear
 # sudo pacman -Syyu
 curl -O https://blackarch.org/strap.sh
 sudo chmod +x strap.sh
-sudo ./strap.sh
+sudo sh strap.sh
 sudo pacman -S blackman
 rm -rf strap.sh
 sudo pacman -Syyu
