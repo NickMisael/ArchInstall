@@ -57,8 +57,8 @@ elif [ "$PlacaVideo" == "A" ] then
 elif [ "$PlacaVideo" == "I" ] then
     sudo pacman -S xf86-video-intel --noconfirm;
 elif [ "$PlacaVideo" == "V" ] then
-    sudo pacman -S xf86-video-fbdev virtualbox-guest-utils virtualbox-guest-modules-arch --noconfirm;
-fi
+    sudo pacman -S xf86-video-fbdev virtualbox-guest-utils virtualbox-host-modules-arch --noconfirm;
+fisudo p
 clear
 
 # Install System tools && ambiente LXDE
@@ -66,7 +66,7 @@ sudo pacman -S openvpn gedit firefox xorg xorg-utils gparted openssh xorg-xinit 
 clear
 
 #Install tools
-sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor steghide metasploit hydra aircrack-ng john nikto nipper netcat theharvester inurlbr etherape chromensics arpon netmap netdiscover dnsenum dnsmap whois
+sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor nmap steghide metasploit hydra aircrack-ng john nikto nipper netcat theharvester inurlbr etherape chromensics arpon netmap netdiscover dnsenum dnsmap whois
 clear
 
 # Finalizando as configuraoes e reiniciando
