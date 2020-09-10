@@ -36,7 +36,7 @@ clear
 # sudo pacman -Syyu
 curl -O https://blackarch.org/strap.sh
 sudo chmod +x strap.sh
-./strap.sh
+sudo ./strap.sh
 sudo pacman -S blackman
 rm -rf strap.sh
 sudo pacman -Syyu
@@ -49,14 +49,14 @@ clear
 lspci | grep -e VGA -e 3D
 echo -e " N -> NVIDIA\nA -> AMDGPU/ATI\nI -> INTEL\nV -> VIRTUALBOX\n"
 read -p "Selecione sua placa de video: " $PlacaVideo;
-if [ "$PlacaVideo"=="N" ] then
+if [ "$PlacaVideo" == "N" ] then
   sudo pacman -S xf86-video-nouveau nvidia nvidia-utils --noconfirm;
-elif [ "$PlacaVideo"=="A" ] then
+elif [ "$PlacaVideo" == "A" ] then
     sudo pacman -S xf86-video-amdgpu --noconfirm;
     sudo pacman -S xf86-video-ati --noconfirm;
-elif [ "$PlacaVideo"=="I" ] then
+elif [ "$PlacaVideo" == "I" ] then
     sudo pacman -S xf86-video-intel --noconfirm;
-elif [ "$PlacaVideo"=="V" ] then
+elif [ "$PlacaVideo" == "V" ] then
     sudo pacman -S xf86-video-fbdev virtualbox-guest-utils virtualbox-guest-modules-arch --noconfirm;
 fi
 clear
