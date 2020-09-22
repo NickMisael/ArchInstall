@@ -58,19 +58,19 @@ elif [ "$PlacaVideo" == "I" ] then
     sudo pacman -S xf86-video-intel --noconfirm;
 elif [ "$PlacaVideo" == "V" ] then
     sudo pacman -S xf86-video-fbdev virtualbox-guest-utils virtualbox-host-modules-arch --noconfirm;
-fisudo p
+fi
 clear
 
 # Install System tools && ambiente LXDE
-sudo pacman -S openvpn gedit firefox xorg xorg-utils gparted openssh xorg-xinit terminator unrar p7zip --noconfirm
+sudo pacman -S openvpn lxde gedit firefox xorg xorg-utils gparted openssh xorg-xinit terminator unrar p7zip --noconfirm
 clear
 
 #Install tools
-sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor nmap steghide metasploit hydra aircrack-ng john nikto nipper netcat theharvester inurlbr etherape chromensics arpon netmap netdiscover dnsenum dnsmap whois
+sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor nmap steghide metasploit hydra aircrack-ng john nikto nipper netcat theharvester inurlbr etherape chromensics arpon netmap netdiscover dnsenum dnsmap whois exiftool
 clear
 
 # Finalizando as configuraoes e reiniciando
-# systemctl enable lxdm
+systemctl enable lxdm
 clear
 
 echo -e "\033[1;34mTerminamos a instalacao completa :D!!"
