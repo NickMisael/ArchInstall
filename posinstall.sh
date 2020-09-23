@@ -49,20 +49,20 @@ clear
 lspci | grep -e VGA -e 3D
 echo -e " N -> NVIDIA\nA -> AMDGPU/ATI\nI -> INTEL\nV -> VIRTUALBOX\n"
 read -p "Selecione sua placa de video: " $PlacaVideo;
-if [ "$PlacaVideo" == "N" ] then
-  sudo pacman -S xf86-video-nouveau nvidia nvidia-utils --noconfirm;
-elif [ "$PlacaVideo" == "A" ] then
-    sudo pacman -S xf86-video-amdgpu --noconfirm;
-    sudo pacman -S xf86-video-ati --noconfirm;
-elif [ "$PlacaVideo" == "I" ] then
-    sudo pacman -S xf86-video-intel --noconfirm;
-elif [ "$PlacaVideo" == "V" ] then
-    sudo pacman -S xf86-video-fbdev virtualbox-guest-utils virtualbox-host-modules-arch --noconfirm;
+if [ "$PlacaVideo" == "N" ]; then
+  sudo pacman -S xf86-video-nouveau nvidia nvidia-utils --noconfirm
+elif [ "$PlacaVideo" == "A" ]; then
+    sudo pacman -S xf86-video-amdgpu --noconfirm
+    sudo pacman -S xf86-video-ati --noconfirm
+elif [ "$PlacaVideo" == "I" ]; then
+    sudo pacman -S xf86-video-intel --noconfirm
+elif [ "$PlacaVideo" == "V" ]; then
+    sudo pacman -S xf86-video-fbdev virtualbox-guest-utils virtualbox-host-modules-arch --noconfirm
 fi
 clear
 
 # Install System tools && ambiente LXDE
-sudo pacman -S openvpn lxde gedit firefox xorg xorg-utils gparted openssh xorg-xinit terminator unrar p7zip --noconfirm
+sudo pacman -S openvpn lxde gedit firefox xorg gparted openssh xorg-xinit terminator unrar p7zip --noconfirm
 clear
 
 #Install tools
