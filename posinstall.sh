@@ -25,6 +25,7 @@ clear
 echo -e "\033[01;57mUm minuto, estamos configurando..."
 # Configurations loading...
 sudo systemctl enable paccache.timer
+sudo systemctl enable dhcpcd
 sudo systemctl enable NetworkManager
 cd ~/ && mkdir Desktop Pictures Downloads Musics Documents Videos
 clear
@@ -62,12 +63,26 @@ fi
 clear
 
 # Install System tools && ambiente LXDE
-sudo pacman -S openvpn lxde gedit firefox xorg gparted openssh xorg-xinit terminator unrar p7zip --noconfirm
+sudo pacman -S openvpn lxde gedit firefox xorg gparted openssh xorg-xinit postgresql wget mysql nginx code terminator unrar p7zip --noconfirm
 clear
 
 #Install tools
-sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor nmap steghide metasploit hydra aircrack-ng john nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap netdiscover dnsenum dnsmap whois
+sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor hexyl nmap steghide metasploit hydra aircrack-ng john nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap netdiscover dnsenum dnsmap whois
 clear
+
+# Acrescentando o repo do yaourt
+sudo pacman -S --needed base-devel git wget yajl
+cd /opt
+git clone https://aur.archlinux.org/package-query.git
+chown $USER package-query
+cd package-query
+makepkg -si
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt
+makepkg -si
+cd ../..
+sudo rm -rf package-query
+cd ~
 
 # Finalizando as configuraoes e reiniciando
 systemctl enable lxdm
