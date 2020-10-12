@@ -63,7 +63,7 @@ fi
 clear
 
 # Install System tools && ambiente LXDE
-sudo pacman -S openvpn lxde gedit firefox xorg gparted openssh xorg-xinit postgresql wget mysql nginx code terminator unrar p7zip --noconfirm
+sudo pacman -S openvpn lxde gedit firefox xorg gparted openssh xorg-xinit postgresql wget mysql nginx code terminator unrar p7zip bc --noconfirm
 clear
 
 #Install tools
