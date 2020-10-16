@@ -65,6 +65,8 @@ clear
 # Install System tools && ambiente LXDE
 sudo pacman -S openvpn lxde gedit firefox xorg gparted openssh vi vim xorg-xinit make mlocate postgresql wget mysql nginx code terminator unrar p7zip bc --noconfirm
 sudo updatedb
+sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
+echo "exec startlxde" >> ~/.xinitrc
 clear
 
 #Install tools
