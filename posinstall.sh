@@ -67,7 +67,7 @@ sudo pacman -S openvpn lxde gedit firefox xorg gparted openssh xorg-xinit postgr
 clear
 
 #Install tools
-sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor hexyl nmap steghide metasploit hydra aircrack-ng john whatweb nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap neofetch fakeroot netdiscover dnsenum dnsmap whois webanalyze
+sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor hexyl nmap steghide tcpdump metasploit hydra aircrack-ng john whatweb nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap neofetch fakeroot netdiscover dnsenum dnsmap whois webanalyze
 clear
 
 # Acrescentando o repo do yaourt
