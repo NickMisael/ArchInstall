@@ -74,9 +74,11 @@ clear
 
 # Acrescentando o repo do yaourt
 sudo pacman -S --needed base-devel git wget yajl
-cd /opt
+
 git clone https://aur.archlinux.org/package-query.git
-chown $USER package-query
+sudo mv package-query /opt
+cd /opt
+sudo chown $USER package-query
 cd package-query
 makepkg -si
 git clone https://aur.archlinux.org/yaourt.git
@@ -85,6 +87,7 @@ makepkg -si
 cd ../..
 sudo rm -rf package-query
 cd ~
+sudo yaourt -Syyu
 
 # Finalizando as configuraoes e reiniciando
 systemctl enable lxdm
