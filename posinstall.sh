@@ -69,7 +69,7 @@ echo "exec startlxde" >> ~/.xinitrc
 clear
 
 #Install tools
-sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor hexyl nmap steghide tcpdump ltrace strace metasploit hydra aircrack-ng john whatweb nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap neofetch fakeroot netdiscover dnsenum dnsmap whois webanalyze
+sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor hexyl nasm nmap steghide tcpdump ltrace strace metasploit hydra aircrack-ng john whatweb nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap neofetch fakeroot netdiscover dnsenum dnsmap whois webanalyze
 clear
 
 # Acrescentando o repo do yaourt
@@ -92,6 +92,8 @@ sudo yaourt -Syyu
 # Finalizando as configuraoes e reiniciando
 systemctl enable lxdm
 clear
+
+echo -ne "set nocompatible\nset nu\nset syntax on\nset encoding=utf-8\nset showcmd\nfiletype plugin indent on\n\nset tabstop=2 shiftwidth=2\nset expandtab\nset backspace=indent,eol,start\n\nset hlsearch\nset incsearch\nsetignorecase\nset smartcase" > .vimrc
 
 echo -e "\033[1;34mTerminamos a instalacao completa :D!!"
 echo -e "\033[1;5;36mSeja Muito Bem-Vindo ao Universo ArchLinux"
