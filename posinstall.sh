@@ -93,7 +93,7 @@ sudo yaourt -Syyu
 systemctl enable lxdm
 clear
 
-echo -ne "set nocompatible\nset nu\nset syntax on\nset encoding=utf-8\nset showcmd\nfiletype plugin indent on\n\nset tabstop=2 shiftwidth=2\nset expandtab\nset backspace=indent,eol,start\n\nset hlsearch\nset incsearch\nsetignorecase\nset smartcase" > .vimrc
+echo -ne "set nocompatible\nset nu\nsyntax on\nset encoding=utf-8\nset showcmd\nfiletype plugin indent on\n\nset tabstop=2 shiftwidth=2\nset expandtab\nset backspace=indent,eol,start\n\nset hlsearch\nset incsearch\nsetignorecase\nset smartcase" > .vimrc
 
 echo -e "\033[1;34mTerminamos a instalacao completa :D!!"
 echo -e "\033[1;5;36mSeja Muito Bem-Vindo ao Universo ArchLinux"
