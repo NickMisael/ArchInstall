@@ -62,14 +62,14 @@ elif [ "$PlacaVideo" == "V" ]; then
 fi
 clear
 # Install System tools && ambiente LXDE
-sudo pacman -S openvpn lxde gedit firefox xorg gparted openssh vim xorg-xinit make mlocate postgresql wget nginx code terminator unrar p7zip bc --noconfirm
+sudo pacman -S openvpn lxde gedit firefox xorg openvpn gparted tor privoxy nyx i2pd torsocks torbrowser-launcher openssh vim xorg-xinit make mlocate postgresql wget nginx code terminator unrar p7zip bc --noconfirm
 sudo updatedb
 sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
 echo "exec startlxde" >> ~/.xinitrc
 clear
 
 #Install tools
-sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor hexyl nasm nmap steghide tcpdump ltrace strace metasploit hydra aircrack-ng john whatweb nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap neofetch fakeroot netdiscover dnsenum dnsmap whois webanalyze
+sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor hexyl pev nasm nmap steghide tcpdump ltrace strace metasploit hydra aircrack-ng john whatweb nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap neofetch fakeroot netdiscover dnsenum dnsmap whois webanalyze
 clear
 
 # Acrescentando o repo do yaourt
@@ -89,6 +89,11 @@ sudo rm -rf package-query
 cd ~
 sudo yaourt -Syyu
 clear
+yaourt -S riseup-vpn
+clear
+yaourt -S protonvpn-cli-ng
+clear
+protonvpn init
 
 # Notificador 
 yaourt -S undistract-me-git
