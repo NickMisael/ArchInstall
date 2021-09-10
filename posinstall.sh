@@ -136,7 +136,7 @@ protonvpn init
 
 # Notificador 
 yaourt -S undistract-me-git
-echo -e "source /usr/share/undistract-me/long-running.bash\notify_when_long_running_commands_finish_install" >> ~/.bashrc
+echo -e "source /usr/share/undistract-me/long-running.bash\nnotify_when_long_running_commands_finish_install" >> ~/.bashrc
 source ~/.bashrc
 sudo echo -ne "if [ -z “$IGNORE_WINDOW_CHECK” ]; then\n   IGNORE_WINDOW_CHECK=0\nfi" >> /usr/share/undistract-me/long-running.bash
 echo "Adicione o som e mude o Timeout, este ultimo se quiser"
