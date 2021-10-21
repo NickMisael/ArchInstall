@@ -136,12 +136,6 @@ protonvpn init
 
 # Notificador 
 yaourt -S undistract-me-git
-echo -e "source /usr/share/undistract-me/long-running.bash\nnotify_when_long_running_commands_finish_install" >> ~/.bashrc
-source ~/.bashrc
-sudo echo -ne "if [ -z “$IGNORE_WINDOW_CHECK” ]; then\n   IGNORE_WINDOW_CHECK=0\nfi" >> /usr/share/undistract-me/long-running.bash
-echo "Adicione o som e mude o Timeout, este ultimo se quiser"
-sudo vim /usr/share/undistract-me/long-running.bash
-
 
 echo "| Configs finais... |"
 # Finalizando as configuraoes e reiniciando
@@ -150,7 +144,7 @@ clear
 
 echo "| Configs finais... |"
 sleep 1
-echo -ne "set nocompatible\nset nu\nsyntax on\nset encoding=utf-8\nset showcmd\nfiletype plugin indent on\n\nset tabstop=2 shiftwidth=2\nset expandtab\nset backspace=indent,eol,start\n\nset hlsearch\nset incsearch\nsetignorecase\nset smartcase" > .vimrc
+echo -ne "set nocompatible\nset nu\nsyntax on\nset encoding=utf-8\nset showcmd\nfiletype plugin indent on\n\nset tabstop=2 shiftwidth=2\nset expandtab\nset backspace=indent,eol,start\n\nset hlsearch\nset incsearch\nset ignorecase\nset smartcase" > .vimrc
 clear
 
 echo "| Configs finais... |"
@@ -160,6 +154,12 @@ git clone https://github.com/NickMisael/bashrc
 cd bashrc
 cp bashrc ~/.bashrc
 cd ~/
+echo -e "source /usr/share/undistract-me/long-running.bash\nnotify_when_long_running_commands_finish_install" >> ~/.bashrc
+source ~/.bashrc
+sudo echo -ne "if [ -z “$IGNORE_WINDOW_CHECK” ]; then\n   IGNORE_WINDOW_CHECK=0\nfi" >> /usr/share/undistract-me/long-running.bash
+echo "Adicione o som e mude o Timeout, este ultimo se quiser | Notification"
+sleep 3
+sudo vim /usr/share/undistract-me/long-running.bash
 rm -rf $Aux
 clear 
 
