@@ -63,7 +63,7 @@ echo -e "\033[01;31mInstalando Drivers..."
 sleep 2
 sudo pacman -S xorg
 sudo pacman -S xfce4 xfce4-goodies ttf-freefonts xdg-user-dirs
-sudo pacman -S gktmm3 xf86-input-vmmouse xf86-video-vmware
+sudo pacman -S gtkmm3 xf86-input-vmmouse xf86-video-vmware
 sudo pacman -S lightdm lightdm-gtk-greeter
 sudo systemctl enable lightdm
 sudo pacman -S open-vm-tools
