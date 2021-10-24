@@ -1,5 +1,5 @@
 #!/bin/bash
-Aux="~/Aux"
+Aux="/home/$USER/Aux"
 sudo cd ..
 sudo chown $USER ArchInstall
 mkdir $Aux
