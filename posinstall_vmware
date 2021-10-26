@@ -81,7 +81,7 @@ clear
 echo -e "\033[01;31mInstalando Programas Uteis..."
 sleep 2
 # Install System tools && ambiente LXDE
-sudo pacman -S openvpn openssh filezilla gedit firefox xorg openvpn gparted tor privoxy nyx i2pd torsocks torbrowser-launcher openssh vim xorg-xinit make mlocate postgresql wget nginx code terminator unrar p7zip bc --noconfirm
+sudo pacman -S lib32-glibc openvpn openssh filezilla gedit firefox xorg openvpn gparted tor privoxy nyx i2pd torsocks torbrowser-launcher openssh vim xorg-xinit make mlocate postgresql wget nginx code terminator unrar p7zip bc --noconfirm
 sudo updatedb
 sleep 2
 clear
