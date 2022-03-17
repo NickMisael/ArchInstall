@@ -2,6 +2,9 @@
 # particionar e formatar as partições
 # montar o ponto do sistema em /mnt
 # timedatectl set-ntp true
+# pacman -Sy
+# pacman -S reflector
+# reflector --verbose -l 10 --sort rate --save /etc/pacma
 # pacstrap /mnt base base-devel linux linux-firmware nano git man info
 # genfstab -U /mnt >> /mnt/etc/fstab
 # arch-chroot /mnt
