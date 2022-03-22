@@ -28,9 +28,10 @@ cd upd72020x-fw/
 makepkg -sri
 cd ..
 rm -rf upd72020x-fw
+sudo pacman -S  linux-firmware-qlogic --noconfirm
 clear ; echo "| Carregando o Mkinitcpio |"
 sleep 1
-sudo mkinitcpio -P
+sudo mkinitcpio -P linux
 clear
 
 echo -e "\033[01;57mUm minuto, estamos fazendo as configuracoes iniciais..."
