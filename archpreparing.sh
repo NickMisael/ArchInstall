@@ -12,7 +12,7 @@
 # ping google.com
 # pacman -Sy
 # pacman -S reflector
-# reflector --verbose -l 10 --sort rate --save /etc/pacma
+# reflector --verbose -l 10 --sort rate --save /etc/pacman.d/mirrorlist
 # pacstrap /mnt base base-devel linux linux-firmware nano git man info
 # genfstab -U /mnt >> /mnt/etc/fstab
 # arch-chroot /mnt
