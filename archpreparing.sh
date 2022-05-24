@@ -2,6 +2,14 @@
 # particionar e formatar as partições
 # montar o ponto do sistema em /mnt
 # timedatectl set-ntp true
+# if ! Wifi
+# /etc/wpa_supplicant.conf
+# network={
+#    ssid="ssid_name"
+#    psk="password"
+#}
+# wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf -D wext
+# ping google.com
 # pacman -Sy
 # pacman -S reflector
 # reflector --verbose -l 10 --sort rate --save /etc/pacma
