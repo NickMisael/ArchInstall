@@ -45,6 +45,7 @@ echo -e "\033[01;57mUm minuto, estamos fazendo as configuracoes iniciais..."
 sudo pkgfile --update
 sleep 1 ; clear
 
+sudo pacman -S archlinux-keyring --noconfirm
 
 echo "| Instalando o BlackArch |"
 sleep 2
