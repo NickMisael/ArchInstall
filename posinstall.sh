@@ -126,8 +126,13 @@ sleep 1
 clear
 echo "| Instalando Yaourt... |"
 
-yaourt -S riseup-vpn
+sudo pacman -S go golang-golang-x-text qt5-tools cmake
+yaourt -S qt-installer-framework
+git clone https://aur.archlinux.org/riseup-vpn.git
+cd riseup-vpn
+makepkg -sri
 clear
+
 
 echo "| Instalando Yaourt... |"
 yaourt -S protonvpn-cli-ng
