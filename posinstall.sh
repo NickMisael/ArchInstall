@@ -1,9 +1,9 @@
 #!/bin/bash
+
 Aux="/home/$USER/Aux"
-sudo cd ..
+cd ..
 sudo chown $USER ArchInstall
 mkdir $Aux
-cd ArchInstall
 cd $Aux
 # Atualizando firmwares
 echo "| Corrigindo os erros do Mkinitcpio |"
@@ -28,9 +28,10 @@ cd upd72020x-fw/
 makepkg -sri
 cd ..
 rm -rf upd72020x-fw
+sudo pacman -S  linux-firmware-qlogic --noconfirm
 clear ; echo "| Carregando o Mkinitcpio |"
 sleep 1
-sudo mkinitcpio -P
+sudo mkinitcpio -P linux
 clear
 
 echo -e "\033[01;57mUm minuto, estamos fazendo as configuracoes iniciais..."
@@ -39,7 +40,6 @@ sleep 2
 sudo systemctl enable paccache.timer
 sudo systemctl enable dhcpcd
 sudo systemctl enable NetworkManager
-cd ~/ && mkdir Desktop Pictures Downloads Musics Documents Videos
 clear
 echo -e "\033[01;57mUm minuto, estamos fazendo as configuracoes iniciais..."
 sudo pkgfile --update
@@ -62,7 +62,7 @@ clear
 # Install Basic Drivers
 echo -e "\033[01;31mInstalando Drivers..."
 sleep 2
-sudo pacman -S pulseaudio-alsa pavucontrol alsa-firmware alsa-utils a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb alsa alsa-lib alsa-tools alsa-plugins pulseaudio vlc xf86-video-fbdev xf86-video-vesa xf86-input-synaptics cups gtk3-print-backends system-config-printer --noconfirm
+sudo pacman -S pulseaudio-alsa pavucontrol alsa-firmware alsa-utils a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb alsa pulseaudio vlc xf86-video-fbdev xf86-video-vesa xf86-input-synaptics cups gtk3-print-backends system-config-printer --noconfirm
 sleep 2
 clear
 
@@ -85,7 +85,7 @@ clear
 echo -e "\033[01;31mInstalando Programas Uteis..."
 sleep 2
 # Install System tools && ambiente LXDE
-sudo pacman -S openvpn lxde gedit firefox xorg openvpn gparted tor privoxy nyx i2pd torsocks torbrowser-launcher openssh vim xorg-xinit make mlocate postgresql wget nginx code terminator unrar p7zip bc --noconfirm
+sudo pacman -S lxde lib32-glibc gcc-multilib lib32-gcc-libs lib32-libltdl lib32-glib2 lib32-fakeroot openvpn openssh filezilla gedit firefox xorg openvpn gparted tor privoxy nyx i2pd torsocks torbrowser-launcher openssh vim xorg-xinit make mlocate postgresql wget nginx code terminator unrar p7zip bc --noconfirm
 sudo updatedb
 sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
 echo "exec startlxde" >> ~/.xinitrc
@@ -94,7 +94,7 @@ clear
 
 echo -e "\033[01;31mInstalando Programas Uteis..."
 #Install tools
-sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor hexyl pev gdb nasm nmap steghide tcpdump ltrace strace metasploit hydra aircrack-ng john whatweb nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap neofetch fakeroot netdiscover dnsenum dnsmap whois webanalyze
+sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor hexyl pev gdb nasm nmap steghide tcpdump ltrace strace metasploit hydra aircrack-ng john whatweb nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap neofetch fakeroot netdiscover dnsenum dnsmap whois webanalyze --noconfirm
 sleep 2
 clear
 
