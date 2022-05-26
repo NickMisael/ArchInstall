@@ -86,7 +86,7 @@ clear
 echo -e "\033[01;31mInstalando Programas Uteis..."
 sleep 2
 # Install System tools && ambiente LXDE
-sudo pacman -S lxde lib32-glibc gcc-multilib lib32-gcc-libs lib32-libltdl lib32-glib2 lib32-fakeroot openvpn openssh filezilla gedit firefox xorg openvpn gparted tor privoxy nyx i2pd torsocks torbrowser-launcher openssh vim xorg-xinit make mlocate postgresql wget nginx code terminator unrar p7zip bc --noconfirm
+sudo pacman -S lynx lxde lib32-glibc gcc-multilib lib32-gcc-libs lib32-libltdl lib32-glib2 lib32-fakeroot openvpn openssh filezilla gedit firefox xorg openvpn gparted tor privoxy nyx i2pd torsocks torbrowser-launcher openssh vim xorg-xinit make mlocate postgresql wget nginx code terminator unrar p7zip bc --noconfirm
 sudo updatedb
 sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
 echo "exec startlxde" >> ~/.xinitrc
