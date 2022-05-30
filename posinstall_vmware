@@ -69,7 +69,7 @@ sudo pacman -S gtkmm3 xf86-input-vmmouse xf86-video-vmware
 sudo pacman -S lightdm lightdm-gtk-greeter
 sudo systemctl enable lightdm
 sudo pacman -S open-vm-tools
-sudo pacman -S pulseaudio-alsa pavucontrol alsa-firmware alsa-utils a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb alsa pulseaudio vlc xf86-video-fbdev xf86-video-vesa xf86-input-synaptics cups gtk3-print-backends system-config-printer --noconfirm
+sudo pacman -S cron pulseaudio-alsa pavucontrol alsa-firmware alsa-utils a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb alsa pulseaudio vlc xf86-video-fbdev xf86-video-vesa xf86-input-synaptics cups gtk3-print-backends system-config-printer --noconfirm
 sleep 2
 clear
 
