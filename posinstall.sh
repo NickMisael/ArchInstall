@@ -95,7 +95,7 @@ clear
 
 echo -e "\033[01;31mInstalando Programas Uteis..."
 #Install tools
-sudo pacman -S radare2 wireshark-qt wireshark-cli wxhexeditor hexyl pev gdb nasm nmap steghide tcpdump ltrace strace metasploit hydra aircrack-ng john whatweb nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap neofetch fakeroot netdiscover dnsenum dnsmap whois webanalyze --noconfirm
+sudo pacman -S edb radare2 wireshark-qt wireshark-cli wxhexeditor hexyl pev gdb nasm nmap steghide tcpdump ltrace strace metasploit hydra aircrack-ng john whatweb nikto nipper netcat traceroute theharvester inurlbr etherape chromensics arpon netmap neofetch fakeroot netdiscover dnsenum dnsmap whois webanalyze --noconfirm
 sleep 2
 clear
 
