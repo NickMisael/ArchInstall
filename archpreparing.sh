@@ -13,14 +13,14 @@
 # pacman -Sy
 # pacman -S reflector
 # reflector --verbose -l 10 --sort rate --save /etc/pacman.d/mirrorlist
-# pacstrap /mnt base base-devel linux linux-firmware nano git man info
+# pacstrap /mnt base base-devel linux linux-firmware nano git man dhcpcd
 # genfstab -U /mnt >> /mnt/etc/fstab
 # arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/America/Phoenix /etc/localtime
 hwclock --systohc
-echo -e "en_US.UTF8 UTF-8\npt_BR.UTF-8 UTF-8" >> /etc/locale.gen
+echo -e "en_US.UTF-8" >> /etc/locale.gen
 locale-gen
-echo LANG=pt_BR.UTF-8 >> /etc/locale.conf
+echo LANG=en_US.UTF-8 >> /etc/locale.conf
 read -p "Digite o hostname: " Hostname;
 echo $Hostname >> /etc/hostname
 echo -e "127.0.0.1 localhost.localdomain localhost\n::1 localhost.localdomain localhost\n127.0.1.1 $Hostname.localdomain $Hostname" >> /etc/hosts
@@ -39,9 +39,10 @@ gpasswd -a $Usuario video
 gpasswd -a $Usuario optical
 gpasswd -a $Usuario storage
 gpasswd -a $Usuario scanner
+gpasswd -a $Usuario wheel
 gpasswd -a $Usuario power
 clear
-pacman -Syyu reflector bash-completion networkmanager network-manager-applet dhcpcd pacman-contrib pkgfile wireless_tools wpa_supplicant mesa dialog sudo net-tools dnsutils --noconfirm
+pacman -Syyu reflector bash-completion dosfstools os-prober mtools networkmanager network-manager-applet dhcpcd pacman-contrib pkgfile wireless_tools wpa_supplicant mesa dialog sudo net-tools dnsutils --noconfirm
 clear
 echo "$Usuario ALL=(ALL) ALL" >> /etc/sudoers
 pacman -S grub os-prober --noconfirm
