@@ -1,33 +1,36 @@
 #!/bin/bash
 
 Aux="/home/$USER/Aux"
-cd ..
-sudo chown $USER ArchInstall
-mkdir $Aux
 cd $Aux
-# Atualizando firmwares
-echo "| Corrigindo os erros do Mkinitcpio |"
-git clone https://aur.archlinux.org/aic94xx-firmware.git 
+
+echo -e "\033[01;31mInstalando Programas Uteis..."
+# Acrescentando o repo do yaourt
+sudo pacman -S --needed yajl
 sleep 2
-clear ; echo "| Corrigindo os erros do Mkinitcpio |"
-cd aic94xx-firmware/
-makepkg -sri
-cd ..
-rm -rf aic94xx-firmware/
-clear ; echo "| Corrigindo os erros do Mkinitcpio |"
-git clone https://aur.archlinux.org/wd719x-firmware.git 
+clear
+
+echo "| Instalando Yaourt... |"
 sleep 2
-cd wd719x-firmware/
-makepkg -sri
-cd ..
-rm -rf wd719x-firmware/
+cd $Aux
+git clone https://aur.archlinux.org/package-query.git
+sudo mv package-query /opt
+cd /opt
+sudo chown $USER package-query
+cd package-query
+makepkg -si
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt
+makepkg -si
+cd ../..
+sudo rm -rf package-query
+cd $Aux
+
+sudo yaourt -Syyu
+sleep 1
+clear
+
+
 clear ; echo "| Corrigindo os erros do Mkinitcpio |"
-git clone https://aur.archlinux.org/upd72020x-fw.git
-sleep 2
-cd upd72020x-fw/
-makepkg -sri
-cd ..
-rm -rf upd72020x-fw
 sudo pacman -S  linux-firmware-qlogic --noconfirm
 clear ; echo "| Carregando o Mkinitcpio |"
 sleep 1
@@ -70,8 +73,15 @@ sudo pacman -S lightdm lightdm-gtk-greeter
 sudo systemctl enable lightdm
 sudo pacman -S open-vm-tools
 sudo pacman -S cron pulseaudio-alsa pavucontrol alsa-firmware alsa-utils a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb alsa pulseaudio vlc xf86-video-fbdev xf86-video-vesa xf86-input-synaptics cups gtk3-print-backends system-config-printer --noconfirm
+sudo pacman -S adapta-gtk-theme materia-gtk-theme breeze deepin-gtk-theme
 sleep 2
 clear
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+cd $Aux
 
 sudo systemctl enable vmtoolsd
 sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -94,31 +104,6 @@ sudo pacman -S edb radare2 wireshark-qt wireshark-cli wxhexeditor hexyl pev gdb 
 sleep 2
 clear
 
-echo -e "\033[01;31mInstalando Programas Uteis..."
-# Acrescentando o repo do yaourt
-sudo pacman -S --needed yajl
-sleep 2
-clear
-
-echo "| Instalando Yaourt... |"
-sleep 2
-cd $Aux
-git clone https://aur.archlinux.org/package-query.git
-sudo mv package-query /opt
-cd /opt
-sudo chown $USER package-query
-cd package-query
-makepkg -si
-git clone https://aur.archlinux.org/yaourt.git
-cd yaourt
-makepkg -si
-cd ../..
-sudo rm -rf package-query
-cd ~
-
-sudo yaourt -Syyu
-sleep 1
-clear
 echo "| Instalando Yaourt... |"
 
 yaourt -S riseup-vpn
